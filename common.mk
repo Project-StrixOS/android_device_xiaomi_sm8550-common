@@ -16,7 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
+    FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -245,7 +245,7 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
 PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
+    vendor.strix.health-service.default
 
 # Network
 PRODUCT_PACKAGES += \
@@ -284,7 +284,7 @@ PRODUCT_PACKAGES += \
     WifiOverlayCommon
 
 PRODUCT_PACKAGES += \
-    LineageResXiaomi
+    AndroidResXiaomi
 
 # Partitions
 PRODUCT_PACKAGES += \
@@ -391,7 +391,7 @@ PRODUCT_PACKAGES += \
 
 # Touchscreen
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch-service.xiaomi
+    vendor.strix.touch-service.xiaomi
 
 $(call soong_config_set, XIAOMI_TOUCH, HIGH_TOUCH_POLLING_PATH, /sys/devices/virtual/touch/touch_dev/bump_sample_rate)
 

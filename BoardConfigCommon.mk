@@ -142,7 +142,7 @@ BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9659482112 # (BOARD_SUPER_PARTITION_SIZE
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
 
 $(foreach p, $(call to-upper, $(XIAOMI_SSI_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
 
 $(foreach p, $(call to-upper, $(XIAOMI_TREBLE_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
@@ -191,11 +191,11 @@ DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/configs/vintf/manifest_xiaomi.xml
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2026-02-01
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+# BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_AVB_VBMETA_SYSTEM := product system system_ext
