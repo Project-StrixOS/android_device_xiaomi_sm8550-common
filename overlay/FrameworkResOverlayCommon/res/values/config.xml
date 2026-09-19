@@ -299,8 +299,8 @@
     <integer name="config_num_physical_slots">2</integer>
 
     <!-- Type of the tap sensor. Empty if tap is not supported. -->
-    <string name="config_dozeTapSensorType">org.lineageos.sensor.single_tap</string>
+    <string name="config_dozeTapSensorType">org.strixos.sensor.single_tap</string>
 
     <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
-    <string name="config_dozeDoubleTapSensorType">org.lineageos.sensor.double_tap</string>
+    <string name="config_dozeDoubleTapSensorType">org.strixos.sensor.double_tap</string>
 </resources>
